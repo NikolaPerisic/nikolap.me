@@ -1,8 +1,21 @@
-@import "../../scss/config";
+@import "./config";
+@import "./mobile";
 
 body {
-  @include background;
-  background: $primary-color;
+  background: url("../assets/images/background2.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: rgba($primary-color, $background-opacity);
+  }
   color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
@@ -35,7 +48,7 @@ header {
 }
 
 .text-secondary {
-  color: #eece1a;
+  color: $secondary-color;
 }
 
 main {
@@ -44,13 +57,14 @@ main {
 
   .icons {
     margin-top: 1rem;
+    font-size: 2rem;
 
     a {
       padding: 0.4rem;
 
       &:hover {
-        color: #eece1a;
-        transition: all 0.8s ease-out;
+        color: $secondary-color;
+        @include easeOut;
       }
     }
   }

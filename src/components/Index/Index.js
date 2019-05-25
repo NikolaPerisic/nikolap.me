@@ -1,25 +1,28 @@
 import React from "react";
-import "./Index.scss";
+import "../../scss/Index.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Index = props => {
   return (
     <main id="home">
-      <h1 class="lg-heading">
-        Nikola <span class="text-secondary">P</span>
+      <h1 className="lg-heading">
+        Nikola <span className="text-secondary">P</span>
       </h1>
-      <h2 class="sm-heading">Web developer, HTML\CSS\Javascript\React\Node</h2>
-      <div class="icons">
+      <h2 className="sm-heading">
+        Web developer, HTML\CSS\Javascript\React\Node
+      </h2>
+      <div className="icons">
         <a href="https://twitter.com/johnny_niko140s" target="blank">
-          <i class="fab fa-twitter fa-2x" />
+          <FontAwesomeIcon icon={["fab", "twitter"]} />
         </a>
         <a href="/">
-          <i class="fab fa-facebook fa-2x" />
+          <FontAwesomeIcon icon={["fab", "facebook-f"]} />
         </a>
         <a href="https://github.com/NikolaPerisic" target="blank">
-          <i class="fab fa-github fa-2x" />
+          <FontAwesomeIcon icon={["fab", "github"]} />
         </a>
         <a href="https://t.me/johnnymegusta" target="blank">
-          <i class="fab fa-telegram fa-2x" />
+          <FontAwesomeIcon icon={["fab", "telegram"]} />
         </a>
       </div>
     </main>
