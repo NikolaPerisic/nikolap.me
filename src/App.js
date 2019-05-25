@@ -1,6 +1,7 @@
 import React from "react";
 import Index from "./components/Index/Index";
 import Menu from "./components/Menu/Menu";
+import About from "./components/About/About";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
   faTwitter,
@@ -16,6 +17,7 @@ function App() {
     <div className="App">
       <Menu />
       <Index />
+      <About />
     </div>
   );
 }
