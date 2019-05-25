@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../scss/menu.scss";
+import classes from "../../scss/menu.module.scss";
 
 const Menu = () => {
   const [menu, setMenu] = useState({ showMenu: false });
@@ -9,34 +9,34 @@ const Menu = () => {
   };
   return (
     <header>
-      <div className="menu-btn" onClick={toggleMenu}>
-        <div className="btn-line" />
-        <div className="btn-line" />
-        <div className="btn-line" />
+      <div className={classes.menu__btn} onClick={toggleMenu}>
+        <div className={classes.btn__line} />
+        <div className={classes.btn__line} />
+        <div className={classes.btn__line} />
       </div>
 
-      <nav className="menu">
-        <div className="menu-branding">
-          <div className="portrait" />
+      <nav className={classes.menu}>
+        <div className={classes.menu__branding}>
+          <div className={classes.portrait} />
         </div>
-        <ul className="menu-nav">
-          <li className="nav-item">
-            <a href="index.html" className="nav-link">
+        <ul className={classes.menu__nav}>
+          <li className={classes.nav__item}>
+            <a href="index.html" className={classes.nav__link}>
               Home
             </a>
           </li>
-          <li className="nav-item">
-            <a href="about.html" className="nav-link">
+          <li className={classes.nav__item}>
+            <a href="about.html" className={classes.nav__link}>
               About Me
             </a>
           </li>
-          <li className="nav-item">
-            <a href="work.html" className="nav-link">
+          <li className={classes.nav__item}>
+            <a href="work.html" className={classes.nav__link}>
               My Work
             </a>
           </li>
-          <li className="nav-item">
-            <a href="contact.html" className="nav-link">
+          <li className={classes.nav__item}>
+            <a href="contact.html" className={classes.nav__link}>
               Contact Me
             </a>
           </li>
