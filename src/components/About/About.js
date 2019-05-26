@@ -1,11 +1,11 @@
-import React, { Fragment } from "react";
+import React from "react";
 import "../../scss/About.scss";
 import img from "../../assets/images/profile_pic.jpg";
 import Footer from "../Footer/Footer";
 
 const About = () => {
   return (
-    <Fragment>
+    <div className="about-page">
       <main id="main">
         <h1 className="lg-heading">
           About <span className="text-secondary">Me</span>
@@ -62,7 +62,7 @@ const About = () => {
         </div>
       </main>
       <Footer />
-    </Fragment>
+    </div>
   );
 };
 
