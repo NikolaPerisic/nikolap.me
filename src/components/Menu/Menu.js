@@ -5,7 +5,6 @@ const Menu = () => {
   const [menu, setMenu] = useState({ showMenu: false });
   const toggleMenu = () => {
     setMenu({ showMenu: !menu.showMenu });
-    console.log(menu.showMenu);
   };
   return (
     <header>
