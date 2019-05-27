@@ -4,31 +4,111 @@
 .contact-page {
   background-color: #333;
 }
-// .boxes {
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: space-evenly;
-//   align-items: center;
-//   margin-top: 1rem;
 
-//   div {
-//     font-size: 2rem;
-//     border: 3px solid #fff;
-//     padding: 1.5rem 2.5rem;
-//     margin-bottom: 3rem;
-//     @include easeOut;
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width: 600px;
+  background-color: #515151;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba($secondary-color, 0.06);
+  overflow: hidden;
+}
 
-//     &:hover {
-//       padding: 0.5rem 1.5rem;
-//       background: $secondary-color;
-//       color: set-text-color($secondary-color);
-//       span {
-//         color: set-text-color($secondary-color);
-//       }
-//       i {
-//         color: set-text-color($secondary-color);
-//       }
-//     }
-//   }
-// }
+h3 {
+  margin: 2rem 2rem 0;
+  font-size: 1.62rem;
+}
+
+.form {
+  padding: 2rem;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  background-color: $secondary-color;
+  border: none;
+  outline-color: $primary-color;
+  border-radius: 3px;
+  padding: 1ch;
+  font-size: 1rem;
+  color: #fff;
+  font-family: inherit;
+}
+
+@mixin input {
+  display: block;
+  width: 100%;
+  border: 2px solid #eee;
+  padding: 1ch;
+  border-radius: 3px;
+  transition: 150ms ease;
+  outline: none;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+@mixin input-focus {
+  border-color: $secondary-color;
+}
+
+@mixin label {
+  position: absolute;
+  top: 1ch;
+  left: 1ch;
+  padding: 0 0.5ch;
+  pointer-events: none;
+  transition: 150ms ease;
+  color: #888;
+}
+
+@mixin label-focus {
+  position: absolute;
+  top: 0;
+  font-size: 0.9em;
+  color: $primary-color;
+  font-weight: bold;
+  transform: translateY(-50%);
+  background-color: #fff;
+  font-weight: 600;
+}
+
+.text-input {
+  position: relative;
+  margin-bottom: 1rem;
+  label {
+    @include label;
+  }
+  label.label-focus {
+    @include label-focus;
+  }
+  input {
+    @include input;
+  }
+  input.input-focus {
+    @include input-focus;
+  }
+}
+
+.text-area {
+  position: relative;
+  margin-bottom: 1rem;
+  label {
+    @include label;
+  }
+  label.label-focus {
+    @include label-focus;
+  }
+  textarea {
+    @include input;
+    height: 8em;
+  }
+  textarea.input-focus {
+    @include input-focus;
+  }
+}
 @import "./mobile";
