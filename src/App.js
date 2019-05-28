@@ -1,4 +1,5 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import Index from "./components/Index/Index";
 import Menu from "./components/Menu/Menu";
 import About from "./components/About/About";
@@ -17,13 +18,15 @@ library.add(faTwitter, faGithub, faFacebookF, faTelegram, faEye);
 
 function App() {
   return (
-    <div className="App">
+    <React.Fragment>
       <Menu />
-      <Index />
-      <About />
-      <Work />
-      <Contact />
-    </div>
+      <Switch>
+        <Route exact path="/" component={Index} />
+        <Route path="/about" component={About} />
+        <Route path="/work" component={Work} />
+        <Route path="/contact" component={Contact} />
+      </Switch>
+    </React.Fragment>
   );
 }
 

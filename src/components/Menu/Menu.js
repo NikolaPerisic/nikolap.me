@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import classes from "../../scss/menu.module.scss";
 
 const Menu = () => {
@@ -49,9 +50,9 @@ const Menu = () => {
                 : `${classes.nav__item} ${classes.show}`
             }
           >
-            <a href="index.html" className={classes.nav__link}>
+            <Link to="/" className={classes.nav__link} onClick={toggleMenu}>
               Home
-            </a>
+            </Link>
           </li>
           <li
             className={
@@ -60,9 +61,13 @@ const Menu = () => {
                 : `${classes.nav__item} ${classes.show}`
             }
           >
-            <a href="about.html" className={classes.nav__link}>
-              About Me
-            </a>
+            <Link
+              to="/about"
+              className={classes.nav__link}
+              onClick={toggleMenu}
+            >
+              About
+            </Link>
           </li>
           <li
             className={
@@ -71,9 +76,9 @@ const Menu = () => {
                 : `${classes.nav__item} ${classes.show}`
             }
           >
-            <a href="work.html" className={classes.nav__link}>
+            <Link to="/work" className={classes.nav__link} onClick={toggleMenu}>
               My Work
-            </a>
+            </Link>
           </li>
           <li
             className={
@@ -82,9 +87,13 @@ const Menu = () => {
                 : `${classes.nav__item} ${classes.show}`
             }
           >
-            <a href="contact.html" className={classes.nav__link}>
-              Contact Me
-            </a>
+            <Link
+              to="/contact"
+              className={classes.nav__link}
+              onClick={toggleMenu}
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </nav>
