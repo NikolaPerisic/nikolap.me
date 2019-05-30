@@ -19,7 +19,11 @@
 }
 // My Work buttons
 .btn {
-  display: block;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem;
@@ -29,15 +33,22 @@
     color: set-text-color($secondary-color);
   }
 }
+
 .btn-dark {
   @extend .btn;
   background: darken($primary-color, 50);
   color: #fff;
+  span {
+    padding-left: 0.3rem;
+  }
 }
 .btn-light {
   @extend .btn;
   background: lighten($primary-color, 50);
   color: #333;
+  span {
+    padding-left: 0.3rem;
+  }
 }
 
 @import "./mobile";

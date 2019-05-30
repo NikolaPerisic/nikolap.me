@@ -20,12 +20,12 @@ const Work = () => {
                   <img src={item.image} alt={item.desc} />
                 </a>
                 <a href={item.link} target="blank" className="btn-light">
-                  <FontAwesomeIcon icon={["fas", "eye"]} />
-                  {item.desc}
+                  <FontAwesomeIcon size="lg" icon={["fas", "eye"]} />
+                  <span>{item.desc}</span>
                 </a>
                 <a href={item.gitLink} target="blank" className="btn-dark">
-                  <FontAwesomeIcon icon={["fab", "github"]} />
-                  Github
+                  <FontAwesomeIcon size="lg" icon={["fab", "github"]} />
+                  <span>Github</span>
                 </a>
               </div>
             );
