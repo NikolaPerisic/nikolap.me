@@ -7,6 +7,8 @@ import Card from "./FormItems/Card/Card";
 import TextInput from "./FormItems/TextInput/TextInput";
 import Button from "./FormItems/Button/Button";
 
+import axios from "axios";
+
 const Contact = () => {
   const [data, setData] = useState({
     name: {
@@ -28,6 +30,7 @@ const Contact = () => {
       focus: false
     }
   });
+
   const handleFocus = e => {
     const name = e.target.name;
     const state = Object.assign({}, data[name]);
@@ -36,7 +39,6 @@ const Contact = () => {
       ...data,
       [name]: state
     });
-    console.log(data);
   };
   const handleBlur = e => {
     const name = e.target.name;
@@ -46,7 +48,6 @@ const Contact = () => {
       ...data,
       [name]: state
     });
-    console.log(data);
   };
   const handleChange = e => {
     const name = e.target.name;
@@ -56,8 +57,25 @@ const Contact = () => {
       ...data,
       [name]: state
     });
-    console.log(data);
   };
+  const handleFormSubmit = e => {
+    e.preventDefault();
+    const contactData = {
+      email: data.email.value,
+      message: data.message.value,
+      time: new Date().getTime()
+    };
+    console.log(contactData);
+    axios
+      .post(process.env.REACT_APP_CLOUD_FUNCTION, contactData)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="contact-page">
       <main id="contact">
@@ -69,7 +87,7 @@ const Contact = () => {
           <Card>
             <h3>Send me a message</h3>
 
-            <Form>
+            <Form formSubmit={handleFormSubmit}>
               <TextInput
                 {...data.name}
                 onFocus={handleFocus}
@@ -88,7 +106,7 @@ const Contact = () => {
                 onBlur={handleBlur}
                 onChange={handleChange}
               />
-              <Button>Send</Button>
+              <Button type="submit">Send</Button>
             </Form>
           </Card>
         </div>
