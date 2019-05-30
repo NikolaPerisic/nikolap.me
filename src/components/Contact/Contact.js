@@ -77,42 +77,44 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact-page">
-      <main id="contact">
-        <h1 className="lg-heading">
-          Contact <span className="text-secondary">Me</span>
-        </h1>
-        <h2 className="sm-heading">How to reach me...</h2>
-        <div className="form-wrapper">
-          <Card>
-            <h3>Send me a message</h3>
+    <React.Fragment>
+      <div className="contact-page">
+        <main id="contact">
+          <h1 className="lg-heading">
+            Contact <span className="text-secondary">Me</span>
+          </h1>
+          <h2 className="sm-heading">How to reach me...</h2>
+          <div className="form-wrapper">
+            <Card>
+              <h3>Send me a message</h3>
 
-            <Form formSubmit={handleFormSubmit}>
-              <TextInput
-                {...data.name}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <TextInput
-                {...data.email}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <TextArea
-                {...data.message}
-                onFocus={handleFocus}
-                onBlur={handleBlur}
-                onChange={handleChange}
-              />
-              <Button type="submit">Send</Button>
-            </Form>
-          </Card>
-        </div>
-      </main>
+              <Form formSubmit={handleFormSubmit}>
+                <TextInput
+                  {...data.name}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                />
+                <TextInput
+                  {...data.email}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                />
+                <TextArea
+                  {...data.message}
+                  onFocus={handleFocus}
+                  onBlur={handleBlur}
+                  onChange={handleChange}
+                />
+                <Button type="submit">Send</Button>
+              </Form>
+            </Card>
+          </div>
+        </main>
+      </div>
       <Footer />
-    </div>
+    </React.Fragment>
   );
 };
 
