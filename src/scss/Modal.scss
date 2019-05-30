@@ -1,24 +1,106 @@
-.modal-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: transparent;
+@import "./config";
+
+/* MODAL */
+.ea-modal {
+  font-family: monospace, sans-serif;
+  font-size: 1.5rem;
+  animation-delay: 1s;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: fadein;
+  background: rgba(0, 0, 0, 0.6);
+  bottom: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
   z-index: 2;
 }
 
-.modal {
-  width: 600px;
-  height: 400px;
-  background-color: lightgray;
+/* MODAL CONTENT */
+.ea-modal-content {
+  background: $primary-color;
+  border-radius: 10px;
+  border: 2px solid $secondary-color;
+
+  max-height: 80vh;
+  overflow: auto;
+  padding: 30px;
+  position: relative;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+  button {
+    color: #fff;
+    align-self: center;
+    border: none;
+    width: 100px;
+    height: 35px;
+    background-color: $secondary-color;
+    border-radius: 3px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+}
+
+/* ANIMATIONS */
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeout {
+  animation-delay: 0s;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-name: fadeout;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+/* CONTAINER */
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }

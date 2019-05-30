@@ -10,7 +10,7 @@ import Modal from "./FormItems/Modal/Modal";
 import axios from "axios";
 
 const Contact = () => {
-  const [data, setData] = useState({
+  const initialState = {
     name: {
       name: "name",
       label: "Name",
@@ -29,8 +29,9 @@ const Contact = () => {
       value: "",
       focus: false
     },
-    showModal: true
-  });
+    showModal: false
+  };
+  const [data, setData] = useState({ ...initialState });
 
   const handleFocus = e => {
     const name = e.target.name;
@@ -59,18 +60,25 @@ const Contact = () => {
       [name]: state
     });
   };
+  const clearForm = () => {
+    setData({ ...initialState });
+  };
   const handleFormSubmit = e => {
     e.preventDefault();
+    if (!data.email.value || !data.message.value) {
+      return null;
+    }
     const contactData = {
       email: data.email.value,
       message: data.message.value,
       time: new Date().getTime()
     };
-    console.log(contactData);
+    // console.log(contactData);
     axios
       .post(process.env.REACT_APP_CLOUD_FUNCTION, contactData)
       .then(res => {
-        console.log(res);
+        // console.log(res);
+        handleModal();
       })
       .catch(error => {
         console.log(error);
@@ -79,10 +87,11 @@ const Contact = () => {
   const handleModal = () => {
     setData({
       ...data,
-      showModal: false
+      showModal: !data.showModal
     });
   };
-  let modal = data.showModal ? <Modal controlModal={handleModal} /> : null;
+
+  let modal = data.showModal ? <Modal controlModal={clearForm} /> : null;
 
   return (
     <React.Fragment>
