@@ -6,7 +6,7 @@ import TextArea from "./FormItems/TextArea/TextArea";
 import Card from "./FormItems/Card/Card";
 import TextInput from "./FormItems/TextInput/TextInput";
 import Button from "./FormItems/Button/Button";
-
+import Modal from "./FormItems/Modal/Modal";
 import axios from "axios";
 
 const Contact = () => {
@@ -28,7 +28,8 @@ const Contact = () => {
       label: "Message",
       value: "",
       focus: false
-    }
+    },
+    showModal: true
   });
 
   const handleFocus = e => {
@@ -75,6 +76,13 @@ const Contact = () => {
         console.log(error);
       });
   };
+  const handleModal = () => {
+    setData({
+      ...data,
+      showModal: false
+    });
+  };
+  let modal = data.showModal ? <Modal controlModal={handleModal} /> : null;
 
   return (
     <React.Fragment>
@@ -85,9 +93,9 @@ const Contact = () => {
           </h1>
           <h2 className="sm-heading">How to reach me...</h2>
           <div className="form-wrapper">
+            {modal}
             <Card>
               <h3>Send me a message</h3>
-
               <Form formSubmit={handleFormSubmit}>
                 <TextInput
                   {...data.name}
