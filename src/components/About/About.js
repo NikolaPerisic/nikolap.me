@@ -19,44 +19,49 @@ const About = () => {
               Hi, I'm self-taught web developer with a great passion for
               programming. My primary focus on front-end is Javascript, ES6,
               React, HTML, CSS, Sass, and on back-end I have experience with
-              technologies like NodeJS, MongoDB and Express, interested in
-              building a career as a Full-Stack Developer.
+              technologies like NodeJS, Express, Firebase, MongoDB. I'm
+              interested in building a career as a Full-Stack Developer.
             </p>
           </div>
           <div className="info info-1">
-            <h3>About the space...</h3>
+            <h3>Front-End...</h3>
             <p>
               Web technologies are evolving at such a fast rate, I think its
-              really exciting beeing in this space. I really like Javascript,
-              because it has such a large community and with technologies like
-              node, bringing JS to the server side really makes things a lot
-              easier for full stack developers. Front-end libraries, frameworks,
-              and tools like npm, webpack, eslint, babel and many others are
-              constantly getting better and easier to work with.
+              really exciting beeing in this space. Currently I really enjoy
+              working with React, especially newer features that offer both
+              class based and functional approach. React apps are modular, fast
+              and reliable in production. I do have experience working with
+              Angular framework, which also has a lot to offer as a complete
+              package. One of the goals for me this year is getting into React
+              Native development as well. Please check out some of my projects
+              in my work section.
             </p>
           </div>
 
           <div className="info info-2">
-            <h3>Now and Future...</h3>
+            <h3>Back-End...</h3>
             <p>
-              I got really interested in web development when I enrolled in CS50
-              course a couple of years ago. It was a brief intro to coding in C,
-              python, algorithms and data structures. Really good stuff, I would
-              definitely recommend it. Currently building some projects with
-              ReactJS, and expanding my knowledge about back-end
-              Node\Express\MongoDB. Please check my github repo if you are
-              interested to see some of the projects that I worked on.
+              On the back-end side I have experience working with Node and
+              Express, building RESTful API server side apps hosted on Heroku
+              and Firebase and integrating github's GraphQL api in React app. I
+              am interested in collaboration and I'm open to participating in
+              open-source projects that will give me the opportunity to
+              contribute, further develop my knowledge, and improve my skills in
+              this field.
             </p>
           </div>
 
           <div className="info info-3">
-            <h3>Early days...</h3>
+            <h3>More about me....</h3>
             <p>
-              In early days and during dot-com bubble, I got interested in IT. I
-              worked in the tech-field industry for many years as IT support
-              techician, PC desktop and laptop service technician, RMA
-              Specialist and also as a procurement agent for various consumer
-              electronics overseas.
+              I developed great passion for programming after I enrolled in CS50
+              course a couple of years ago. Beside Javascript I also have
+              experience writing small programs in C. I believe strong
+              Algorithms and Data Structures fundamentals are essential in
+              getting better in the field. I completed several courses like
+              CS50, FreeCodeCamp and numerous Udemy courses covering these
+              topics. I'm also a part-time IT student, which gives me the chance
+              to work, and study in my free time.
             </p>
           </div>
         </div>
